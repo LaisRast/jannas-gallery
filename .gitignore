@@ -1,0 +1,10 @@
+node_modules
+dist
+.idea
+pocketbase/pb_data
+pocketbase/pocketbase
+
+data/art
+data/art.csv
+data/books
+data/books.csv
