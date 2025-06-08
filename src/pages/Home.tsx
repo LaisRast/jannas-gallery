@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import BooksIcon from '../assets/book-shelf-line.svg?react';
+import GamesIcon from '../assets/gamepad-line.svg?react';
 import GalleryIcon from '../assets/multi-image-line.svg?react';
 import PageTitle from '../components/common/PageTitle.tsx';
 
@@ -38,10 +39,13 @@ const Home = () => {
           }}
         >
           <Button variant="contained" component={Link} to="/gallery" startIcon={<GalleryIcon width={34} />}>
-            Galerie entdecken
+            Galerie
           </Button>
           <Button variant="contained" component={Link} to="/books" startIcon={<BooksIcon width={34} />}>
-            Bücher entdecken
+            Bücher
+          </Button>
+          <Button variant="contained" component={Link} to="/games" startIcon={<GamesIcon width={34} />}>
+            Spiele
           </Button>
         </Box>
       </Box>

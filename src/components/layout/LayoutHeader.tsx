@@ -7,6 +7,7 @@ import MenuIcon from '../../assets/menu-line.svg?react';
 const links = [
   { to: '/gallery', title: 'Galerie' },
   { to: '/books', title: 'Bücher' },
+  { to: '/games', title: 'Spiele' },
   { to: '/about', title: 'Über Janna' },
 ];
 
@@ -84,12 +85,7 @@ const LayoutHeader = () => {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {links.map((link) => (
-                <MenuItem
-                  key={link.to}
-                  component={Link}
-                  to={link.to}
-                  onClick={handleCloseNavMenu}
-                >
+                <MenuItem key={link.to} component={Link} to={link.to} onClick={handleCloseNavMenu}>
                   <Typography sx={{ textAlign: 'center' }}>{link.title}</Typography>
                 </MenuItem>
               ))}

@@ -8,6 +8,8 @@ import About from './pages/About.tsx';
 import Book from './pages/Book.tsx';
 import Books from './pages/Books.tsx';
 import Gallery from './pages/Gallery.tsx';
+import Game from './pages/Game.tsx';
+import Games from './pages/Games.tsx';
 import Home from './pages/Home.tsx';
 import NotFound from './pages/NotFound.tsx';
 
@@ -26,6 +28,8 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/books" element={<Books />} />
                 <Route path="/book/:readableId" element={<Book />} />
+                <Route path="/games" element={<Games />} />
+                <Route path="/game/:readableId" element={<Game />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="*" element={<NotFound />} />
               </Route>

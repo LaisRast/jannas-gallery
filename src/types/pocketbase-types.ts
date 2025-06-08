@@ -14,6 +14,7 @@ export enum Collections {
 	Art = "art",
 	ArtView = "art_view",
 	Books = "books",
+	Games = "games",
 	Likes = "likes",
 	Users = "users",
 }
@@ -126,6 +127,18 @@ export type BooksRecord = {
 	updated?: IsoDateString
 }
 
+export type GamesRecord = {
+	created?: IsoDateString
+	date: IsoDateString
+	description: string
+	id: string
+	project_id: string
+	readable_id: string
+	thumbnail: string
+	title: string
+	updated?: IsoDateString
+}
+
 export type LikesRecord = {
 	art_id: RecordIdString
 	created?: IsoDateString
@@ -155,6 +168,7 @@ export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> &
 export type ArtResponse<Texpand = unknown> = Required<ArtRecord> & BaseSystemFields<Texpand>
 export type ArtViewResponse<Tlikes_count = unknown, Texpand = unknown> = Required<ArtViewRecord<Tlikes_count>> & BaseSystemFields<Texpand>
 export type BooksResponse<Texpand = unknown> = Required<BooksRecord> & BaseSystemFields<Texpand>
+export type GamesResponse<Texpand = unknown> = Required<GamesRecord> & BaseSystemFields<Texpand>
 export type LikesResponse<Texpand = unknown> = Required<LikesRecord> & BaseSystemFields<Texpand>
 export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>
 
@@ -169,6 +183,7 @@ export type CollectionRecords = {
 	art: ArtRecord
 	art_view: ArtViewRecord
 	books: BooksRecord
+	games: GamesRecord
 	likes: LikesRecord
 	users: UsersRecord
 }
@@ -182,6 +197,7 @@ export type CollectionResponses = {
 	art: ArtResponse
 	art_view: ArtViewResponse
 	books: BooksResponse
+	games: GamesResponse
 	likes: LikesResponse
 	users: UsersResponse
 }
@@ -198,6 +214,7 @@ export type TypedPocketBase = PocketBase & {
 	collection(idOrName: 'art'): RecordService<ArtResponse>
 	collection(idOrName: 'art_view'): RecordService<ArtViewResponse>
 	collection(idOrName: 'books'): RecordService<BooksResponse>
+	collection(idOrName: 'games'): RecordService<GamesResponse>
 	collection(idOrName: 'likes'): RecordService<LikesResponse>
 	collection(idOrName: 'users'): RecordService<UsersResponse>
 }
