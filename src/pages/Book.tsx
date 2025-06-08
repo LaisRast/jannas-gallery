@@ -12,9 +12,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.m
 
 const Book = () => {
   const { readableId } = useParams();
-  const { data: book, isLoading: booksIsLoading, error } = useBookByReadableId({ readableId: readableId ?? '' }); // temporary solution
+  const { data: book, isLoading: bookIsLoading, error } = useBookByReadableId({ readableId: readableId ?? '' }); // temporary solution
 
-  if (booksIsLoading || !book) return <LoadingSpinner />;
+  if (bookIsLoading || !book) return <LoadingSpinner />;
 
   if (error) return <LoadingError />;
 

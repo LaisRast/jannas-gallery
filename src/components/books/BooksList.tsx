@@ -5,11 +5,11 @@ import useScreenSize from '../../hooks/useScreenSize.ts';
 import { BooksRecord } from '../../types/pocketbase-types.ts';
 import { convertToDateOnly } from '../../utils/dateUtils.ts';
 
-interface BookListProps {
+interface BooksListProps {
   books: BooksRecord[];
 }
 
-const BooksList = ({ books }: BookListProps) => {
+const BooksList = ({ books }: BooksListProps) => {
   const { isSmallScreen } = useScreenSize();
 
   return (
